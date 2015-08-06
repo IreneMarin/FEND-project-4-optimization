@@ -85,6 +85,15 @@ module.exports = function(grunt) {
                     sizes: [{
                         width: 116,
                         quality: 60
+                    },{
+                        width: 165,
+                        quality: 60
+                    },{
+                        width: 360,
+                        quality: 60
+                    },{
+                        width: 720,
+                        quality: 60
                     }]
                 },
 
@@ -106,6 +115,9 @@ module.exports = function(grunt) {
                 files: {
                     'views/images/opt/pizza-116.png': 'views/images/pizza-116.png',
                     'views/images/opt/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
+                    'views/images/opt/pizza-165.png': 'views/images/pizza-165.png',
+                    'views/images/opt/pizzeria-360.jpg': 'views/images/pizzeria-360.jpg',
+                    'views/images/opt/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
                     'img/opt/profilepic.jpg': 'img/profilepic.jpg'
                 }
             }
