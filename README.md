@@ -18,15 +18,19 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 - Apply optimizations for PageSpeed: minified css and js, optimized images, inlined css, configured the viewport.
 - Optimizations made in views/js/main.js:
-  - Lines 360-366: created a helper function to use instead of document.querySelectorAll.
-  - Lines 436-455: deleted the function determineDx, since we change the pizza size inside the changePizzaSizes. Also optimized the for loop to put the new width in each .randomPizzaContainer.
-  - Line 471: put 50 pizzas in the background (100 is too much).
-  - Lines 451 and 504: used getDomNodeArray instead of document.querySelectorAll.
-  - Line 507: the document.body.scrollTop is a constant number, so we don't want to create the varible each time inside the for loop, moved it outside in a new variable.
-  - Lines 511-513: phase only have 5 different values, because it changes for each (i % 5). So we create an array where we put the 5 values. We also put the phase variable outside the for loop, to separate the manipulation of the DOM from the methods that query the state.
-  - Lines 517-518: optimized the for loop function with the new outside variables created.
-  - Line 539: created 50 moving pizzas (200 is way too much).
-  - Lines 542-544: put the optimized image of the pizza with its real size.
+  - Put 'use strict' in each function to make the code more secure.
+  - Lines 416: changed the querySelector for the getElementById, to make it faster.
+  - Lines 440-461: deleted the function determineDx, since we change the pizza size inside the changePizzaSizes. Also optimized the for loop to put the new width in each .randomPizzaContainer and used getElementsByClassName instead of querySelectorAll.
+  - Line 474: created variable outside of loop, using getElementById.
+  - Line 510: used getElementsByClassName for .mover instead of document.querySelectorAll.
+  - Line 513: the document.body.scrollTop is a constant number, so we don't want to create the varible each time inside the for loop, moved it outside in a new variable.
+  - Lines 517-519: phase only have 5 different values, because it changes for each (i % 5). So we create an array where we put the 5 values. We also put the phase variable outside the for loop, to separate the manipulation of the DOM from the methods that query the state.
+  - Lines 522-524: optimized the for loop function with the new outside variables created, and the items.length outside the loop in a variable.
+  - Line 544: move the variable elem outside the loop.
+  - Line 545: changed the querySelector for the getElementById to make it faster, and put outside the loop
+  - Lines 549-551: calculated the total number of pizzas we need for the screen we are using.
+  - Line 554: create the exact number of pizzas onscreen.
+  - Lines 557-559: put the optimized image of the pizza with its real size.
 - Optimizations in CSS: put will-change:transform;transform:translateZ(0);backface-visibility:hidden; in the .mover class. This way we will create diferent layouts for each pizza and the main layout will not be repainted every time we create a pizza.
 
 -----------------------------------------------
