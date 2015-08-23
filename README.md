@@ -45,12 +45,6 @@ In the /dist/ folder there is the final production code, with the minified css/j
 
 -----------------------------------------------
 
-### To run Grunt
-
-
-
------------------------------------------------
-
 ### To run the application
 
 1. Download the /dist/ folder in your computer.
