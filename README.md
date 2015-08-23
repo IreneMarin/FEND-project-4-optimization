@@ -29,6 +29,11 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
   - Lines 542-544: put the optimized image of the pizza with its real size.
 - Optimizations in CSS: put will-change:transform;transform:translateZ(0);backface-visibility:hidden; in the .mover class. This way we will create diferent layouts for each pizza and the main layout will not be repainted every time we create a pizza.
 
+-----------------------------------------------
+
+### To run Grunt
+
+
 
 -----------------------------------------------
 
