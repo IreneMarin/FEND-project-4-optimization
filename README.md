@@ -5,8 +5,8 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 ####Part 1: Optimize PageSpeed Insights 
 
-- Minified CSS and JS files with Grunt, in a folder called /dist/
-- Optimized images (size and compression) with Grunt, in a folder called /dist/
+- Minified CSS and JS files with Grunt, in the production version /dist/
+- Optimized images (size and compression) with Grunt, in the /dist/
 - Eliminated render-blocking JavaScript and CSS in above-the-fold content:
   - style.css inlined in index.html.
   - print.css with the media=print tag.
@@ -69,7 +69,16 @@ Or you can use the project uploaded in this link: <a href="http://irene.marin.ca
 
 -----------------------------------------------
 
-### Tu run Grunt and create the production version
+### Tu create the production version
+
+To build the production version, you need to have Grunt installed in project folder.
+You also need the /test/ folder, and the gruntfile.js and package.json files in the root. 
+
+Then you go to the console, go inside the project folder, type "grunt" and click Enter.
+
+The /dist/ folder will be created, will all the HTML files, and with all the subfolders of css, js and img optimized and minized. 
+
+To install grunt, <a href="http://gruntjs.com/getting-started" target="_blank">follow this instructions</a>. 
 
 -----------------------------------------------
 
