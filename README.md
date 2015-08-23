@@ -23,7 +23,7 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
   - Line 479: put 50 pizzas in the background, 100 is too much.
   - Line 513: use getDomNodeArray instead of document.querySelectorAll
   - Lines 516-530: 
-  - Line 549: 
+  - Line 549: create 50 moving pizzas, 200 is way too much.
   - Lines 552-554: 
 
 
