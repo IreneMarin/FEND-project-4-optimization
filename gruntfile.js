@@ -1,23 +1,10 @@
 module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt);
     
-    // Where we configure each plug-in
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         
-        // clean and create the folders that we use for the new files (images) for the tasks
-        clean: {
-            dev: {
-                src: ['dist/img', 'dist/css', 'dist/js', 'dist/views/css', 'dist/views/images', 'dist/views/js'],
-            },
-        },
-        mkdir: {
-            dev: {
-                options: {
-                    create: ['dist/img', 'dist/css', 'dist/js', 'dist/views/css', 'dist/views/images', 'dist/views/js']
-                },
-            },
-        },
+        // 1) First look for problems in the code
         
         // lint javascript (validate and detect errors) 
         jshint: {
@@ -25,55 +12,85 @@ module.exports = function(grunt) {
                options: {
                    force: true
                },
-               src: ['Gruntfile.js', 'js/*.js', 'views/js/*.js']
+               src: ['Gruntfile.js', 'test/js/*.js', 'test/views/js/*.js']
            }
-        },
-        
+        },        
         // lint css (validate and detect errors)
         csslint: {            
             lax: {
                 options: {
                     import: false
                 },
-                src: ['css/*.css', 'views/css/*css']
+                src: ['test/css/*.css', 'test/views/css/*css']
             }
-        },
-        
+        },        
         // lint html (validate and detect errors)
         htmllint: {
             all: {
                 options: {
                     force: true
                 },
-                src: ['*.html', 'views/pizza.html']
+                src: ['*test/.html', 'test/views/*.html']
             }
         },
+        
+        // 2) Then copy all the content in a /dist/ folder, which will be the final production code
+        
+        // clean and create the folder for the production code
+        clean: {
+            dev: {
+                src: ['dist/'],
+            },
+        },
+        mkdir: {
+            dev: {
+                options: {
+                    create: ['dist/']
+                },
+            },
+        },
+        // copy the files in the /dist/ folder just created
+        copy: {
+            main: {
+                files: [
+                    {expand: true, cwd: 'test/', src: ['**'], dest: 'dist/'}
+                ],
+            },
+        },
+        
+        // 3) We optimize the code from the /dist/ folder: minify javascript and css, and optimize images
         
         // minify javascript
         uglify: {
-            build: {
-                files: {
-                    'dist/js/perfmatters.min.js': ['js/perfmatters.js'],
-                    'dist/views/js/main.min.js': ['views/js/main.js']
-                } 
+            my_target: {
+                files: [{
+                    expand: true,
+                    cwd: 'dist/js',
+                    src: ['*.js'],
+                    dest: 'dist/js'
+                },{
+                    expand: true,
+                    cwd: 'dist/views/js',
+                    src: ['*.js'],
+                    dest: 'dist/views/js'
+                }]
             }
-        },
-        
-        // minify all css from the "css" folder, adding the .min extension        
+        },             
+        // minify css
         cssmin: {
             target: {
                 files: [{
                     expand: true,
-                    cwd: 'css',
-                    src: ['*.css', '!*.min.css'],
+                    cwd: 'dist/css',
+                    src: ['*.css'],
                     dest: 'dist/css',
-                    ext: '.min.css'
+                    ext: '.css'
                 },{
                     expand: true,
-                    cwd: 'views/css',
-                    src: ['*.css', '!*.min.css'],
+                    cwd: 'dist/views/css',
+                    src: ['*.css'],
                     dest: 'dist/views/css',
-                    ext: '.min.css'
+                    ext: '.css'
                 }]
             }
         },
@@ -97,44 +114,26 @@ module.exports = function(grunt) {
                         quality: 60
                     }]
                 },
-
                 files: [{
                     expand: true,
-                    src: ['*.{gif,jpg,png,JPG,PNG}'],
-                    cwd: 'views/images/',
-                    dest: 'views/images/'
+                    src: ['**.{gif,jpg,png}'],
+                    cwd: 'dist/views/images/',
+                    dest: 'dist/views/images/'
                 }]
             }
-        },
-        
-        // optimize images from pizza
-        imagemin: {
-            static: {
-                options: {
-                    optimizationLevel: 3      
-                },
-                files: {
-                    'dist/views/images/pizza-77.png': 'views/images/pizza-77.png',
-                    'dist/views/images/pizza-232.png': 'views/images/pizza-232.png',
-                    'dist/views/images/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
-                    'dist/views/images/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
-                    'dist/img/profilepic.jpg': 'img/profilepic.jpg'
-                }
-            }
         }
-        
     });
     
     // Where we tell Grunt what to do when we type "grunt" into the terminal
     grunt.registerTask('default', [
-        'clean',
-        'mkdir',
         'jshint',
         'csslint',
         'htmllint',
+        'clean',
+        'mkdir',
+        'copy',
         'uglify',
         'cssmin',
-        'responsive_images',
-        'imagemin'
+        'responsive_images'
     ]);
 };
