@@ -8,14 +8,13 @@ module.exports = function(grunt) {
         // clean and create the folders that we use for the new files (images) for the tasks
         clean: {
             dev: {
-                src: ['views/images/opt', 'img/opt'],
+                src: ['dist/img', 'dist/css', 'dist/js', 'views/dist/css', 'views/dist/images', 'views/dist/js'],
             },
         },
-
         mkdir: {
             dev: {
                 options: {
-                    create: ['views/images/opt', 'img/opt']
+                    create: ['dist/img', 'dist/css', 'dist/js', 'views/dist/css', 'views/dist/images', 'views/dist/js']
                 },
             },
         },
@@ -53,8 +52,10 @@ module.exports = function(grunt) {
         // minify javascript
         uglify: {
             build: {
-                src: 'js/perfmatters.js',
-                dest: 'js/perfmatters.min.js'
+                files: {
+                    'dist/js/perfmatters.min.js': ['js/perfmatters.js'],
+                    'views/dist/js/main.min.js': ['views/js/main.js']
+                } 
             }
         },
         
@@ -65,13 +66,13 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'css',
+                    dest: 'dist/css',
                     ext: '.min.css'
                 },{
                     expand: true,
                     cwd: 'views/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'views/css',
+                    dest: 'views/dist/css',
                     ext: '.min.css'
                 }]
             }
@@ -83,13 +84,13 @@ module.exports = function(grunt) {
                 options: {
                     engine: 'im',
                     sizes: [{
+                        width: 77,
+                        quality: 60
+                    },{
                         width: 116,
                         quality: 60
                     },{
-                        width: 165,
-                        quality: 60
-                    },{
-                        width: 360,
+                        width: 232,
                         quality: 60
                     },{
                         width: 720,
@@ -113,12 +114,11 @@ module.exports = function(grunt) {
                     optimizationLevel: 3      
                 },
                 files: {
-                    'views/images/opt/pizza-116.png': 'views/images/pizza-116.png',
-                    'views/images/opt/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
-                    'views/images/opt/pizza-165.png': 'views/images/pizza-165.png',
-                    'views/images/opt/pizzeria-360.jpg': 'views/images/pizzeria-360.jpg',
-                    'views/images/opt/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
-                    'img/opt/profilepic.jpg': 'img/profilepic.jpg'
+                    'views/dist/images/pizza-77.png': 'views/images/pizza-77.png',
+                    'views/dist/images/pizza-232.png': 'views/images/pizza-232.png',
+                    'views/dist/images/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
+                    'views/dist/images/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
+                    'dist/img/profilepic.jpg': 'img/profilepic.jpg'
                 }
             }
         }
