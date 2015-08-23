@@ -8,13 +8,13 @@ module.exports = function(grunt) {
         // clean and create the folders that we use for the new files (images) for the tasks
         clean: {
             dev: {
-                src: ['dist/img', 'dist/css', 'dist/js', 'views/dist/css', 'views/dist/images', 'views/dist/js'],
+                src: ['dist/img', 'dist/css', 'dist/js', 'dist/views/css', 'dist/views/images', 'dist/views/js'],
             },
         },
         mkdir: {
             dev: {
                 options: {
-                    create: ['dist/img', 'dist/css', 'dist/js', 'views/dist/css', 'views/dist/images', 'views/dist/js']
+                    create: ['dist/img', 'dist/css', 'dist/js', 'dist/views/css', 'dist/views/images', 'dist/views/js']
                 },
             },
         },
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
             build: {
                 files: {
                     'dist/js/perfmatters.min.js': ['js/perfmatters.js'],
-                    'views/dist/js/main.min.js': ['views/js/main.js']
+                    'dist/views/js/main.min.js': ['views/js/main.js']
                 } 
             }
         },
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'views/css',
                     src: ['*.css', '!*.min.css'],
-                    dest: 'views/dist/css',
+                    dest: 'dist/views/css',
                     ext: '.min.css'
                 }]
             }
@@ -114,10 +114,10 @@ module.exports = function(grunt) {
                     optimizationLevel: 3      
                 },
                 files: {
-                    'views/dist/images/pizza-77.png': 'views/images/pizza-77.png',
-                    'views/dist/images/pizza-232.png': 'views/images/pizza-232.png',
-                    'views/dist/images/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
-                    'views/dist/images/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
+                    'dist/views/images/pizza-77.png': 'views/images/pizza-77.png',
+                    'dist/views/images/pizza-232.png': 'views/images/pizza-232.png',
+                    'dist/views/images/pizzeria-116.jpg': 'views/images/pizzeria-116.jpg',
+                    'dist/views/images/pizzeria-720.jpg': 'views/images/pizzeria-720.jpg',
                     'dist/img/profilepic.jpg': 'img/profilepic.jpg'
                 }
             }

@@ -386,7 +386,7 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
   pizzaImageContainer.classList.add("col-md-6");
 
-  pizzaImage.src = "dist/images/pizza-232.png";  // we change the image to take the one that we have optimized with grunt
+  pizzaImage.src = "images/pizza-232.png";  // we change the image to take the one that we have optimized with grunt
   pizzaImage.classList.add("img-responsive");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
@@ -558,7 +558,7 @@ document.addEventListener('DOMContentLoaded', function() {
   for (var i = 0; i < numberPizzas; i++) {
     elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "dist/images/pizza-77.png";  // change the image to take the one most optimized for the size
+    elem.src = "images/pizza-77.png";  // change the image to take the one most optimized for the size
     elem.style.height = "100px";
     elem.style.width = "77px";  // 73px wasn't the correct proportion of the image, for a 100px height it is 77px
     elem.basicLeft = (i % cols) * s;
