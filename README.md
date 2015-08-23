@@ -1,4 +1,4 @@
-# Website Performance Optimization portfolio project
+## Website Performance Optimization portfolio project
 
 Fourth project from the Front-End Web Developer Nanodegree in <a href="http://www.udacity.com" target="_blank">Udacity</a>: 
 
