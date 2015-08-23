@@ -1,8 +1,7 @@
 ## Website Performance Optimization portfolio project
 
 Fourth project from the Front-End Web Developer Nanodegree in <a href="http://www.udacity.com" target="_blank">Udacity</a>:<br>
-optimized index.html to achieve a score of 90 or higher in PageSpeed, <br>
-and optimized main.js to achieve 60 fps or higher in pizza.html
+optimized index.html to achieve a score of 90 or higher in PageSpeed, and optimized main.js to achieve 60 fps or higher in pizza.html
 
 ####Part 1: Optimize PageSpeed Insights 
 
