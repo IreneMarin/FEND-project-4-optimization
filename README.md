@@ -32,6 +32,30 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 -----------------------------------------------
 
+### To run the application: 
+
+1. Download the repository.
+1. To inspect the site on your phone, you can run a local server
+
+  ```bash
+  $> cd /path/to/your-project-folder
+  $> python -m SimpleHTTPServer 8080
+  ```
+
+1. Open a browser and visit localhost:8080
+1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+
+  ``` bash
+  $> cd /path/to/your-project-folder
+  $> ngrok 8080
+  ```
+
+1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights and Chrome DevTools!
+
+Or you can use the project uploaded in this link: <a href="http://irene.marin.cat/udacity/project4/index.html" target="_blank">Project 4</a>
+
+-----------------------------------------------
+
 ### Udacity's instructions
 
 You will optimize a provided website with a number of optimization- and performance-related issues so that it achieves a target PageSpeed score and runs at 60 frames per second.
