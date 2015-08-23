@@ -31,6 +31,16 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 -----------------------------------------------
 
+### Folders
+
+In the /original_code/ folder there is the original code provided by Udacity.
+
+In the root, there is the working code.
+
+In the /dist/ folder there is the final production code, with the minified css/js and optimized images. 
+
+-----------------------------------------------
+
 ### To run Grunt
 
 
