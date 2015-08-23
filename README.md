@@ -39,9 +39,9 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 In the /original/ folder, there is the original code provided by Udacity.
 
-In the /test/ folder, there is the working code.
+In the /test/ folder, there is the development code.
 
-In the /dist/ folder, there is the final production code with the minified css/js and optimized images. 
+In the /dist/ folder, there is the production code, with the minified css/js and optimized images. 
 
 -----------------------------------------------
 
@@ -66,6 +66,10 @@ In the /dist/ folder, there is the final production code with the minified css/j
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights and Chrome DevTools!
 
 Or you can use the project uploaded in this link: <a href="http://irene.marin.cat/udacity/project4/dist/index.html" target="_blank">Project 4</a>
+
+-----------------------------------------------
+
+### Tu run Grunt and create the production version
 
 -----------------------------------------------
 
