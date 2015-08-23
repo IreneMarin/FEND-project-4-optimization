@@ -296,7 +296,7 @@ function generator(adj, noun) {
 
 // Chooses random adjective and random noun
 function randomName() {
-  "use strict";
+  "use strict";     // put 'use strict' in each function to make the code more secure
   var randomNumberAdj = parseInt(Math.random() * adjectives.length);
   var randomNumberNoun = parseInt(Math.random() * nouns.length);
   return generator(adjectives[randomNumberAdj], nouns[randomNumberNoun]);
@@ -413,20 +413,18 @@ var resizePizzas = function(size) {
   // Changes the value for the size of the pizza above the slider
   function changeSliderLabel(size) {
     // we change the querySelector for the getElementById to make it faster
+    var pizzaSizeId = document.getElementById('pizzaSize');
     switch(size) {
       case "1":
-        //document.querySelector("#pizzaSize").innerHTML = "Small";
-        document.getElementById('pizzaSize').innerHTML = "Small";
+        pizzaSizeId.innerHTML = "Small";
         return;
         break;
       case "2":
-        //document.querySelector("#pizzaSize").innerHTML = "Medium";
-        document.getElementById('pizzaSize').innerHTML = "Medium";
+        pizzaSizeId.innerHTML = "Medium";
         return;
         break;
       case "3":
-        //document.querySelector("#pizzaSize").innerHTML = "Large";
-        document.getElementById('pizzaSize').innerHTML = "Large";
+        pizzaSizeId.innerHTML = "Large";
         return;
         break;
       default:
@@ -473,8 +471,6 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-// With a 24" screen and 1920px resolution, there are a total of 40 pizzas at the same time, so we put 50, just in case.
-// It is not necessary to create the variable for each loop, we put the variable outside the for loop.
 var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 100; i++) {  
   pizzasDiv.appendChild(pizzaElementGenerator(i));
