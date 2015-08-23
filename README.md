@@ -14,19 +14,9 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
   - Load asyncronoulsy the Google Fonts with a script in the footer
 - Create web.config file to put an expiry date to static resources (css, images and js)
 
-
-
-
-
-
-
-
-
-
 ####Part 2: Optimize Frames per Second 
 
-
-
+- hola
 
 
 -----------------------------------------------
