@@ -19,30 +19,126 @@ cameron *at* udacity *dot* com
 // Here are arrays of all possible pizza ingredients.
 var pizzaIngredients = {};
 pizzaIngredients.meats = [
-  "Pepperoni", "Sausage", "Fennel Sausage", "Spicy Sausage", "Chicken", "BBQ Chicken", "Chorizo", "Chicken Andouille",
-  "Salami", "Tofu", "Bacon", "Canadian Bacon", "Proscuitto", "Italian Sausage", "Ground Beef", "Anchovies", "Turkey",
-  "Ham", "Venison", "Lamb", "Duck", "Soylent Green", "Carne Asada", "Soppressata Picante", "Coppa", "Pancetta", "Bresola",
-  "Lox", "Guanciale", "Chili", "Beef Jerky", "Pastrami", "Kielbasa", "Scallops", "Filet Mignon"
+  "Pepperoni",
+  "Sausage",
+  "Fennel Sausage",
+  "Spicy Sausage",
+  "Chicken",
+  "BBQ Chicken",
+  "Chorizo",
+  "Chicken Andouille",
+  "Salami",
+  "Tofu",
+  "Bacon",
+  "Canadian Bacon",
+  "Proscuitto",
+  "Italian Sausage",
+  "Ground Beef",
+  "Anchovies",
+  "Turkey",
+  "Ham",
+  "Venison",
+  "Lamb",
+  "Duck",
+  "Soylent Green",
+  "Carne Asada",
+  "Soppressata Picante",
+  "Coppa",
+  "Pancetta",
+  "Bresola",
+  "Lox",
+  "Guanciale",
+  "Chili",
+  "Beef Jerky",
+  "Pastrami",
+  "Kielbasa",
+  "Scallops",
+  "Filet Mignon"
 ];
 pizzaIngredients.nonMeats = [
-  "White Onions", "Red Onions", "Sauteed Onions", "Green Peppers", "Red Peppers", "Banana Peppers", "Ghost Peppers",
-  "Habanero Peppers", "Jalapeno Peppers", "Stuffed Peppers", "Spinach", "Tomatoes", "Pineapple", "Pear Slices",
-  "Apple Slices", "Mushrooms", "Arugula", "Basil", "Fennel", "Rosemary", "Cilantro", "Avocado", "Guacamole",
-  "Salsa", "Swiss Chard", "Kale", "Sun Dried Tomatoes", "Walnuts", "Artichoke", "Asparagus", "Caramelized Onions",
-  "Mango", "Garlic", "Olives", "Cauliflower", "Polenta", "Fried Egg", "Zucchini", "Hummus"
+  "White Onions",
+  "Red Onions",
+  "Sauteed Onions",
+  "Green Peppers",
+  "Red Peppers",
+  "Banana Peppers",
+  "Ghost Peppers",
+  "Habanero Peppers",
+  "Jalapeno Peppers",
+  "Stuffed Peppers",
+  "Spinach",
+  "Tomatoes",
+  "Pineapple",
+  "Pear Slices",
+  "Apple Slices",
+  "Mushrooms",
+  "Arugula",
+  "Basil",
+  "Fennel",
+  "Rosemary",
+  "Cilantro",
+  "Avocado",
+  "Guacamole",
+  "Salsa",
+  "Swiss Chard",
+  "Kale",
+  "Sun Dried Tomatoes",
+  "Walnuts",
+  "Artichoke",
+  "Asparagus",
+  "Caramelized Onions",
+  "Mango",
+  "Garlic",
+  "Olives",
+  "Cauliflower",
+  "Polenta",
+  "Fried Egg",
+  "Zucchini",
+  "Hummus"
 ];
 pizzaIngredients.cheeses = [
-  "American Cheese", "Swiss Cheese", "Goat Cheese", "Mozzarella Cheese", "Parmesean Cheese", "Velveeta Cheese",
-  "Gouda Cheese", "Muenster Cheese", "Applewood Cheese", "Asiago Cheese", "Bleu Cheese", "Boursin Cheese", "Brie Cheese",
-  "Cheddar Cheese", "Chevre Cheese", "Havarti Cheese", "Jack Cheese", "Pepper Jack Cheese", "Gruyere Cheese",
-  "Limberger Cheese", "Manchego Cheese", "Marscapone Cheese", "Pecorino Cheese", "Provolone Cheese", "Queso Cheese",
-  "Roquefort Cheese", "Romano Cheese", "Ricotta Cheese", "Smoked Gouda"
+  "American Cheese",
+  "Swiss Cheese",
+  "Goat Cheese",
+  "Mozzarella Cheese",
+  "Parmesean Cheese",
+  "Velveeta Cheese",
+  "Gouda Cheese",
+  "Muenster Cheese",
+  "Applewood Cheese",
+  "Asiago Cheese",
+  "Bleu Cheese",
+  "Boursin Cheese",
+  "Brie Cheese",
+  "Cheddar Cheese",
+  "Chevre Cheese",
+  "Havarti Cheese",
+  "Jack Cheese",
+  "Pepper Jack Cheese",
+  "Gruyere Cheese",
+  "Limberger Cheese",
+  "Manchego Cheese",
+  "Marscapone Cheese",
+  "Pecorino Cheese",
+  "Provolone Cheese",
+  "Queso Cheese",
+  "Roquefort Cheese",
+  "Romano Cheese",
+  "Ricotta Cheese",
+  "Smoked Gouda"
 ];
 pizzaIngredients.sauces = [
-  "Red Sauce", "Marinara", "BBQ Sauce", "No Sauce", "Hot Sauce"
+  "Red Sauce",
+  "Marinara",
+  "BBQ Sauce",
+  "No Sauce",
+  "Hot Sauce"
 ];
 pizzaIngredients.crusts = [
-  "White Crust", "Whole Wheat Crust", "Flatbread Crust", "Stuffed Crust"
+  "White Crust",
+  "Whole Wheat Crust",
+  "Flatbread Crust",
+  "Stuffed Crust"
 ];
 
 // Name generator pulled from http://saturdaykid.com/usernames/generator.html
@@ -51,7 +147,6 @@ String.prototype.capitalize = function() {
   return this.charAt(0).toUpperCase() + this.slice(1);
 };
 
-// Pulls adjective out of array using random number sent from generator
 function getAdj(x){
   switch(x) {
     case "dark": 
@@ -255,10 +350,19 @@ var makeRandomPizza = function() {
     pizza += ingredientItemizer(selectRandomCheese());
   }
 
-  pizza = pizza + ingredientItemizer(selectRandomSauce());
-  pizza = pizza + ingredientItemizer(selectRandomCrust());
+  pizza += ingredientItemizer(selectRandomSauce());
+  pizza += ingredientItemizer(selectRandomCrust());
 
   return pizza;
+};
+
+// Helper function instead of document.querySelectorAll. We will use it in updatePositions and changePizzaSizes
+function getDomNodeArray(selector) {
+  // get the elements as a DOM collection
+  var elemCollection = document.querySelectorAll(selector);
+  // coerce the DOM collection into an array
+  var elemArray = Array.prototype.slice.apply(elemCollection);
+  return elemArray;
 };
 
 // returns a DOM element for each pizza
@@ -281,11 +385,10 @@ var pizzaElementGenerator = function(i) {
   pizzaContainer.id = "pizza" + i;                // gives each pizza element a unique id
   pizzaImageContainer.classList.add("col-md-6");
 
-  pizzaImage.src = "images/opt/pizza-165.png";  // change the image to take the one that we have optimized with grunt
+  pizzaImage.src = "images/opt/pizza-165.png";  // we change the image to take the one that we have optimized with grunt
   pizzaImage.classList.add("img-responsive");
   pizzaImageContainer.appendChild(pizzaImage);
   pizzaContainer.appendChild(pizzaImageContainer);
-
 
   pizzaDescriptionContainer.classList.add("col-md-6");
 
@@ -325,44 +428,12 @@ var resizePizzas = function(size) {
         console.log("bug in changeSliderLabel");
     }
   }
-
   changeSliderLabel(size);
 
   // Returns the size difference to change a pizza element from one size to another. Called by changePizzaSlices(size).
-  function determineDx (elem, size) {
-    var oldwidth = elem.offsetWidth;
-    var windowwidth = document.querySelector("#randomPizzas").offsetWidth;
-    var oldsize = oldwidth / windowwidth;
-
-    // TODO: change to 3 sizes? no more xl?
-    // Changes the slider value to a percent width
-    function sizeSwitcher (size) {
-      switch(size) {
-        case "1":
-          return 0.25;
-          break;
-        case "2":
-          return 0.3333;
-          break;
-        case "3":
-          return 0.5;
-          break;
-        default:
-          console.log("bug in sizeSwitcher");
-      }
-    }
-
-    var newsize = sizeSwitcher(size);
-    var dx = (newsize - oldsize) * windowwidth;
-
-    return dx;
-  }
-
+  // We have deleted the function determineDx. It is not necessary to call it, since we will change the pizza size inside the changePizzaSizes
+  
   // Iterates through pizza elements on the page and changes their widths
-  // it is insane --> it is doing way way way too much
-  // randomPizzas --> 
-  // for loop --> it accesses the geometric property of the elements  (offsetwidth) and changes their styles --> cause of force syncronism layout
-  // determineDx --> useless --> a lot of work, no business being inside the loop --> what does it do???
   function changePizzaSizes(size) {
     var newWidth;
     switch(size) {
@@ -377,22 +448,18 @@ var resizePizzas = function(size) {
         break;
       default:
         console.log("bug in sizeSwitcher");
-    }
-    
-    var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-    
+    }    
+    var randomPizzas = getDomNodeArray('.randomPizzaContainer');
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
-    }
-    
-    //var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-    //for (var i = 0; i < randomPizzas.length; i++) {
-    //  var dx = determineDx(randomPizzas[i], size);
-    //  var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';  // px creation --> unnecessary work --> % width 
-    //  randomPizzas[i].style.width = newwidth;
-    //}
-    
-    
+    }    
+    // this is doing too much work, the for loop causes the force syncronism layouts 
+    /*var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
+    for (var i = 0; i < randomPizzas.length; i++) {
+      var dx = determineDx(randomPizzas[i], size);
+      var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';  // px creation --> unnecessary work --> % width 
+      randomPizzas[i].style.width = newwidth;
+    }*/        
   }
   changePizzaSizes(size);
 
@@ -406,9 +473,10 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-// això tb fa que vagi lent!!
-for (var i = 2; i < 50; i++) {
-  var pizzasDiv = document.getElementById("randomPizzas");
+// It is not necessary to put 100 pizzas in the background. 
+// With a 24" screen and 1920px resolution, there are a total of 40 pizzas at the same time, so we put 50, just in case
+var pizzasDiv = document.getElementById("randomPizzas");
+for (var i = 2; i < 52; i++) {  
   pizzasDiv.appendChild(pizzaElementGenerator(i));
 }
 
@@ -438,32 +506,29 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
+  //console.log("frame: " + frame);
   window.performance.mark("mark_start_frame");
-
-  var items = document.querySelectorAll('.mover');
+  
+  //  
+  var items = getDomNodeArray('.mover');
+  
+  // the document.body.scrollTop is a fixed number, so we don't want to create the varible each time inside the for loop, we move it outside
+  var scrollNumber = document.body.scrollTop / 1250;
+  
+  //An important technique for keeping a page snappy is to batch methods that manipulate the DOM separately from those that query the state.
+  var phase = [];  
   for (var i = 0; i < items.length; i++) {
-    // això sembla que està fent un bottleneck!!
-    // Forced synchronous layout is a possible performance bottleneck.
-    var phase = Math.sin((document.body.scrollTop / 1250) + (i % 5));
-    console.log(phase);
-    items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
+    phase[i] = Math.sin(scrollNumber + (i % 5));
   }  
   
-  // helper function instead of document.querySelectorAll!
-  function getDomNodeArray(selector) {
-    // get the elements as a DOM collection
-    var elemCollection = document.querySelectorAll(selector);
-    // coerce the DOM collection into an array
-    var elemArray = Array.prototype.slice.apply(elemCollection);
-    return elemArray;
-  };
-  var divs = getDomNodeArray('div');
-
-
-
-
-
-
+  for (var j = 0; j < items.length; j++) {    
+    items[j].style.left = items[j].basicLeft + 100 * phase[j] + 'px';    
+    //console.log("Número de la pizza: " + i);
+    //console.log("phase: " + phase[j]);
+    //console.log("items.basicLeft: " + items[j].basicLeft);     
+    //console.log("style.left: " + items[j].basicLeft + 100 * phase[j] + 'px');     
+  }
+  
   // User Timing API to the rescue again. Seriously, it's worth learning.
   // Super easy to create custom metrics.
   window.performance.mark("mark_end_frame");
@@ -472,34 +537,25 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
-  
-
-  
-  
-  
-  
-  
-  
-  
 }
-
 // runs updatePositions on scroll
 window.addEventListener('scroll', updatePositions);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {
   var cols = 8;
-  var s = 256;  // aquí no n'hem de posar tantes en pantalla! n'hi haurà 40 com a màxim
-  for (var i = 0; i < 40; i++) {
+  var s = 256;  
+  // we don't need to create 200 pizzas. With a 24" there will be 40 pizzas onscreen, so we create 50, just in case
+  for (var i = 0; i < 50; i++) {
     var elem = document.createElement('img');
     elem.className = 'mover';
-    elem.src = "images/pizza-77.png";  // we change the image to take the one we optimized with grunt
-    elem.style.height = "100px";  
-    elem.style.width = "77px";  // el tamany real de la pizza
+    elem.src = "images/pizza-77.png";  // we change the image to take the one most optimized for the size
+    elem.style.height = "100px";
+    elem.style.width = "77px";  // 73px wasn't the correct proportion of the image, for a 100px height it is 77px
     elem.basicLeft = (i % cols) * s;
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }
-  // aquí bottleneck
   updatePositions();
+  //console.log("s'ha fet una crida a updatepositions")
 });
