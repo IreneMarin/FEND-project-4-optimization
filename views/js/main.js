@@ -395,8 +395,7 @@ var pizzaElementGenerator = function(i) {
   pizzaName = document.createElement("h4");
   pizzaName.innerHTML = randomName();
   pizzaDescriptionContainer.appendChild(pizzaName);
-
-  // aquí hi ha algo que fa que vagi lent!
+  
   ul = document.createElement("ul");
   ul.innerHTML = makeRandomPizza();
   pizzaDescriptionContainer.appendChild(ul);
@@ -452,14 +451,7 @@ var resizePizzas = function(size) {
     var randomPizzas = getDomNodeArray('.randomPizzaContainer');
     for (var i = 0; i < randomPizzas.length; i++) {
       randomPizzas[i].style.width = newWidth + "%";
-    }    
-    // this is doing too much work, the for loop causes the force syncronism layouts 
-    /*var randomPizzas = document.querySelectorAll(".randomPizzaContainer");
-    for (var i = 0; i < randomPizzas.length; i++) {
-      var dx = determineDx(randomPizzas[i], size);
-      var newwidth = (randomPizzas[i].offsetWidth + dx) + 'px';  // px creation --> unnecessary work --> % width 
-      randomPizzas[i].style.width = newwidth;
-    }*/        
+    }
   }
   changePizzaSizes(size);
 
@@ -473,8 +465,8 @@ var resizePizzas = function(size) {
 window.performance.mark("mark_start_generating"); // collect timing data
 
 // This for-loop actually creates and appends all of the pizzas when the page loads
-// It is not necessary to put 100 pizzas in the background. 
-// With a 24" screen and 1920px resolution, there are a total of 40 pizzas at the same time, so we put 50, just in case
+// With a 24" screen and 1920px resolution, there are a total of 40 pizzas at the same time, so we put 50, just in case.
+// It is not necessary to create the variable for each loop, we put the variable outside the for loop.
 var pizzasDiv = document.getElementById("randomPizzas");
 for (var i = 2; i < 52; i++) {  
   pizzasDiv.appendChild(pizzaElementGenerator(i));
@@ -509,24 +501,22 @@ function updatePositions() {
   //console.log("frame: " + frame);
   window.performance.mark("mark_start_frame");
   
-  //  
   var items = getDomNodeArray('.mover');
   
-  // the document.body.scrollTop is a fixed number, so we don't want to create the varible each time inside the for loop, we move it outside
+  // the document.body.scrollTop is a constant number, so we don't want to create the varible each time inside the for loop, we move it outside
   var scrollNumber = document.body.scrollTop / 1250;
   
-  //An important technique for keeping a page snappy is to batch methods that manipulate the DOM separately from those that query the state.
+  // phase will only have 5 different values, because it changes for each (i % 5). So we create an array where we put the 5 values
+  // we also put the phase variable outside the for loop, to separate the manipulation of the DOM from the methods that query the state
   var phase = [];  
-  for (var i = 0; i < items.length; i++) {
+  for (var i = 0; i < 5; i++) {
     phase[i] = Math.sin(scrollNumber + (i % 5));
+    //console.log(phase[i]);
   }  
   
   for (var j = 0; j < items.length; j++) {    
-    items[j].style.left = items[j].basicLeft + 100 * phase[j] + 'px';    
-    //console.log("Número de la pizza: " + i);
-    //console.log("phase: " + phase[j]);
-    //console.log("items.basicLeft: " + items[j].basicLeft);     
-    //console.log("style.left: " + items[j].basicLeft + 100 * phase[j] + 'px');     
+    items[j].style.left = items[j].basicLeft + 100 * phase[j % 5] + 'px';    
+    //console.log("phase: " + phase[j] + ", items.basicLeft: " + items[j].basicLeft + ", style.left: " + items[j].basicLeft + 100 * phase[j] + 'px');
   }
   
   // User Timing API to the rescue again. Seriously, it's worth learning.
