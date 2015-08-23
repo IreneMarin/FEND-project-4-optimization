@@ -49,7 +49,7 @@ In the /dist/ folder there is the final production code, with the minified css/j
 
 ### To run the application
 
-1. Download the repository.
+1. Download the /dist/ folder in your computer.
 1. To inspect the site on your phone, you can run a local server:
 
   ```bash
@@ -67,7 +67,7 @@ In the /dist/ folder there is the final production code, with the minified css/j
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights and Chrome DevTools!
 
-Or you can use the project uploaded in this link: <a href="http://irene.marin.cat/udacity/project4/index.html" target="_blank">Project 4</a>
+Or you can use the project uploaded in this link: <a href="http://irene.marin.cat/udacity/project4/dist/index.html" target="_blank">Project 4</a>
 
 -----------------------------------------------
 
