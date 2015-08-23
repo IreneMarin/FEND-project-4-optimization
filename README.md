@@ -7,11 +7,11 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 - Minify CSS and JS files with Grunt
 - Optimize images (size and compression) with Grunt
-- Eliminate render-blocking JavaScript and CSS
+- Eliminate render-blocking JavaScript and CSS in above-the-fold content
   - style.css inlined in index.html
   - print.css with the media=print tag
-  - Google Analytics script put to the footer of the page
-  - Script to load asyncronoulsy the Google Fonts in the footer
+  - Put the Google Analytics script to the footer of the page
+  - Load asyncronoulsy the Google Fonts with a script in the footer
 - Create web.config file to put an expiry date to static resources (css, images and js)
 
 
