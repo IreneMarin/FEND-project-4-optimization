@@ -5,8 +5,8 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 ####Part 1: Optimize PageSpeed Insights 
 
-- Minified CSS and JS files with Grunt.
-- Optimized images (size and compression) with Grunt.
+- Minified CSS and JS files with Grunt, in a folder called /dist/
+- Optimized images (size and compression) with Grunt, in a folder called /dist/
 - Eliminated render-blocking JavaScript and CSS in above-the-fold content:
   - style.css inlined in index.html.
   - print.css with the media=print tag.
