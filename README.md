@@ -32,18 +32,18 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 -----------------------------------------------
 
-### To run the application: 
+### To run the application
 
 1. Download the repository.
-1. To inspect the site on your phone, you can run a local server
+1. To inspect the site on your phone, you can run a local server:
 
   ```bash
   $> cd /path/to/your-project-folder
   $> python -m SimpleHTTPServer 8080
   ```
 
-1. Open a browser and visit localhost:8080
-1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely.
+1. Open a browser and visit localhost:8080.
+1. Download and install [ngrok](https://ngrok.com/) to make your local server accessible remotely:
 
   ``` bash
   $> cd /path/to/your-project-folder
