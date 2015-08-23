@@ -34,6 +34,8 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 ### Udacity's instructions
 
+You will optimize a provided website with a number of optimization- and performance-related issues so that it achieves a target PageSpeed score and runs at 60 frames per second.
+
 1. Review our course on Website Performance Optimization using Google PageSpeed.
 2. Download the required project assets.
 3. Use Chrome Developer Tools to review the current state of various pages within the application and identify areas for improvement.
