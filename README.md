@@ -5,13 +5,14 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 ####Part 1: Optimize PageSpeed Insights 
 
-- script with Analytics to the footer
-- script to load asyncronoulsy the Google Fonts in the footer
-- print.css with media=print
-- style.css inlined in index.html
-- css and js files minimized with grunt
-- images optimized with grunt
-- create web.config file to put cache toeveryting in css, images and js folders
+- Minify CSS and JS files with Grunt
+- Optimize images (size and compression) with Grunt
+- Eliminate render-blocking JavaScript and CSS
+  - style.css inlined in index.html
+  - print.css with the media=print tag
+  - Google Analytics script put to the footer of the page
+  - Script to load asyncronoulsy the Google Fonts in the footer
+- Create web.config file to put an expiry date to static resources (css, images and js)
 
 
 
