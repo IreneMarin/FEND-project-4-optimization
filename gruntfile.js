@@ -30,7 +30,7 @@ module.exports = function(grunt) {
                 options: {
                     force: true
                 },
-                src: ['*test/.html', 'test/views/*.html']
+                src: ['test/*.html', 'test/views/*.html']
             }
         },
         
