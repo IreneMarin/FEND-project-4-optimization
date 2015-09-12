@@ -5,25 +5,25 @@ optimized index.html to achieve a score of 90 in PageSpeed, and optimized main.j
 
 ####Part 1: Optimize PageSpeed Insights 
 
-- Minified CSS and JS files with Grunt, in the production version /dist/
-- Optimized images (size and compression) with Grunt, in the /dist/
-- Eliminated render-blocking JavaScript and CSS in above-the-fold content:
+- Minify CSS and JS files with Grunt, in the production version /dist/
+- Optimize images (size and compression) with Grunt, in the /dist/
+- Eliminate render-blocking JavaScript and CSS in above-the-fold content:
   - style.css inlined in index.html.
   - print.css with the media=print tag.
   - Put the Google Analytics script to the footer of the page.
-  - Loaded asyncronoulsy the Google Fonts with a script in the footer.
-- Created web.config file to put an expiry date to static resources (css, images and js).
+  - Load asyncronoulsy the Google Fonts with a script in the footer.
+- Create web.config file to put an expiry date to static resources (css, images and js).
 
 ####Part 2: Optimize Frames per Second 
 
-- Apply optimizations for PageSpeed: minified css and js, optimized images, inlined css, configured the viewport.
+- Apply optimizations for PageSpeed: minify css and js, optimize images, inline css, configure the viewport.
 - Optimizations made in views/js/main.js:
   - Put 'use strict' in each function to make the code more secure.
-  - Changed querySelector and querySelectorAll to getElementById and getElementsByClassName, to make it faster.
-  - Deleted the function determineDx, since we change the pizza size inside the changePizzaSizes. Also optimized the loop in changePizzaSizes to put the new width in each .randomPizzaContainer.
-  - Created all the variables outside of loops where possible.
+  - Change querySelector and querySelectorAll to getElementById and getElementsByClassName, to make it faster.
+  - Delete the function determineDx, since we change the pizza size inside the changePizzaSizes. Also optimize the loop in changePizzaSizes to put the new width in each .randomPizzaContainer.
+  - Create all the variables outside of loops where possible.
   - In updatePositions, phase only have 5 different values, because it changes for each (i % 5). So we create an array where we put the 5 values. We also put the phase variable outside the for loop, to separate the manipulation of the DOM from the methods that query the state. And finally we optimize the loop. 
-  - Calculated the total number of pizzas we need for the screen we are using, and then created the exact number of pizzas onscreen. Put the optimized image of the pizza with its real size.
+  - Calculate the total number of pizzas we need for the screen we are using, and then create the exact number of pizzas onscreen. Put the optimized image of the pizza with its real size.
 - Optimizations in CSS: put will-change:transform;transform:translateZ(0);backface-visibility:hidden; in the .mover class. This way we will create diferent layouts for each pizza and the main layout will not be repainted every time we create a pizza.
 
 -----------------------------------------------
