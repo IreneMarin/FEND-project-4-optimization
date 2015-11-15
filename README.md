@@ -84,3 +84,9 @@ You will optimize a provided website with a number of optimization- and performa
 3. Use Chrome Developer Tools to review the current state of various pages within the application and identify areas for improvement.
 4. Review the code powering the website and identify areas where you believe modifications are warranted.
 5. Iteratively make changes and test those changes using the tools available to you to determine if they are a performance gain or loss.
+
+---------------------
+
+### License
+
+The project is licensed under the [MIT license](license.txt).
