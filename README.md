@@ -58,7 +58,7 @@ In the /dist/ folder, there is the production code, with the minified css/js and
 
 1. Copy the public URL ngrok gives you and try running it through PageSpeed Insights and Chrome DevTools!
 
-Or you can use the project uploaded in this link: <a href="http://irene.marin.cat/udacity/project4/dist/index.html" target="_blank">Project 4</a>
+Or you can use the project uploaded in this link: <a href="http://irenemarin.github.io/FEND-project-4-optimization/dist/index.html" target="_blank">Project 4</a>
 
 -----------------------------------------------
 
